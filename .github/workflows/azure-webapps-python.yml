@@ -28,7 +28,7 @@ jobs:
       - name: Build And Deploy
         uses: azure/webapps-deploy@v2
         with:
-          app_location: ${{ env.APP_LOCATION }}
+          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
 
   close:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
